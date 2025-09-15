@@ -1,0 +1,24 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: account-route
+          uri: http://localhost:8082   # ton microservice "account-service"
+          predicates:
+            - Path=/accounts/**
+
+        - id: customer-service   # en YAML c’est ":" et pas " :"
+          uri: http://localhost:8081
+          predicates:
+            - Path=/customers/**   # corriger en "Path", pas "path"
+
+eureka:
+  client:
+    enabled: true
+  instance:
+    prefer-ip-address: true
