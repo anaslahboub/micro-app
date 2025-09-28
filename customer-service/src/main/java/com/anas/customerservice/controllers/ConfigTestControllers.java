@@ -26,7 +26,7 @@ public class ConfigTestControllers {
     int y;
 
     @Autowired
-    GlobalConfig global;
+    public  GlobalConfig global;
 
 
     @GetMapping("/testConfig")
