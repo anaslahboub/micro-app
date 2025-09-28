@@ -20,9 +20,9 @@ public interface CustomerRestClient {
     default Customer getDefaultCustomer(Long id,  Exception exception) {
         Customer customer = new Customer();
         customer.setId(id);
-        customer.setFirstName("defaultCustomer");
-        customer.setLastName("default");
-        customer.setEmail("default@email.com");
+        customer.setFirstName("not available");
+        customer.setLastName("not available");
+        customer.setEmail("not available@email.com");
         return customer;
     }
 }
